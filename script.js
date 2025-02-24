@@ -24,7 +24,7 @@ dropZone.addEventListener('drop', (e) => {
 // تبديل حالة الترتيب
 function toggleSortOrder() {
   ascendingOrder = !ascendingOrder;
-  sortButton.textContent = ascendingOrder ? '🔄 ترتيب: من A إلى Z' : '🔄 ترتيب: من Z إلى A';
+  sortButton.textContent = ascendingOrder ? '🔄 From A To Z' : '🔄 From Z To A';
   sortFiles();
 }
 
@@ -51,8 +51,8 @@ function renderFileList() {
     li.innerHTML = `
       ${file.name}
       <div class="buttons">
-        <button onclick="previewFile(${index})">👁️ معاينة</button>
-        <button onclick="removeFile(${index})">❌ إزالة</button>
+        <button onclick="previewFile(${index})">👁️ Preview </button>
+        <button onclick="removeFile(${index})">❌ Delete </button>
       </div>
     `;
     fileList.appendChild(li);
@@ -87,7 +87,7 @@ async function mergePDFs() {
     const url = URL.createObjectURL(blob);
     downloadLink.href = url;
     downloadLink.style.display = 'block';
-    downloadLink.textContent = '📥 تنزيل الملف المدموج';
+    downloadLink.textContent = '📥 Download Merged File ';
     previewFrame.src = url;
     previewFrame.style.display = 'block';
   } catch (error) {
